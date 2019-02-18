@@ -1,0 +1,32 @@
+{
+	"name": "OLX sem Lixo",
+	"version":"1.0",
+	"description":"Remove anúncios que você não quer mais ver na OLX",
+	"permissions":[
+		"contextMenus",
+		"cookies",
+		"storage",
+		"tabs",
+		"activeTab"
+	],
+	"browser_action":{
+		"default_popup":"index.html"
+	},
+	"content_scripts":[
+		{
+			"matches":[
+				"*://*.olx.com.br/**"
+			],
+			"js":[
+				"js/jquery-3.3.1.min.js",
+				"js/fontawesome.min.js",
+				"js/regular.js",
+				"js/solid.min.js",
+				"js/olx.js"
+			],
+			"run_at": "document_end",
+			"persistent": false
+		}
+	],
+	"manifest_version":2
+}
